@@ -103,7 +103,7 @@ function ProductPage() {
             <div className="mt-5">
               <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Applications</div>
               <ul className="grid sm:grid-cols-2 gap-2">
-                {product.applications.map((a) => (
+                {product.applications.map((a: string) => (
                   <li key={a} className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-ember" /> {a}
                   </li>
@@ -151,7 +151,7 @@ function ProductPage() {
           <div className="container-page">
             <h2 className="font-display text-3xl uppercase mb-6">Related Products</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-              {related.map((p) => <ProductCard key={p.slug} product={p} />)}
+              {related.map((p: typeof related[number]) => <ProductCard key={p.slug} product={p} />)}
             </div>
           </div>
         </section>

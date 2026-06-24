@@ -66,7 +66,7 @@ function ProductsPage() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === "Enter") navigate({ search: (s) => ({ ...s, q: query }) });
+                    if (e.key === "Enter") navigate({ search: (s: { category: string; q: string; sort: "default" | "low" | "high" }) => ({ ...s, q: query }) });
                   }}
                   placeholder="Search products…"
                   className="w-full h-11 pl-9 pr-3 rounded-md border border-input bg-white"
@@ -102,7 +102,7 @@ function ProductsPage() {
               <h3 className="font-display text-sm uppercase tracking-widest mb-3">Sort</h3>
               <select
                 value={sort}
-                onChange={(e) => navigate({ search: (s) => ({ ...s, sort: e.target.value as "default" | "low" | "high" }) })}
+                onChange={(e) => navigate({ search: (s: { category: string; q: string; sort: "default" | "low" | "high" }) => ({ ...s, sort: e.target.value as "default" | "low" | "high" }) })}
                 className="w-full h-10 px-3 rounded-md border border-input bg-white text-sm"
               >
                 <option value="default">Featured</option>
