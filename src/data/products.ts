@@ -315,27 +315,6 @@ export const products: Product[] = [
     applications: ["Bridges", "Pumps", "Heavy machinery mounts"],
   },
   {
-    slug: "black-silicone-rubber-cable",
-    name: "Black Silicone Rubber Cable",
-    price: "₹100/Meter",
-    priceValue: 100,
-    category: "Silicone",
-    image: `${imageBase}/black-silicone-rubber-cable-500x500.jpg.webp`,
-    images: [`${imageBase}/black-silicone-rubber-cable-500x500.jpg.webp`, ...baseGallery],
-    description:
-      "High-temperature silicone insulated cable for industrial heaters, lighting, and harsh environments.",
-    material: "Silicone, tinned copper conductor",
-    sizes: "0.5 sqmm – 25 sqmm",
-    moq: "100 Meters",
-    specifications: [
-      "Silicone insulation for heat and chemical resistance",
-      "Flexible conductor for industrial wiring",
-      "Available in custom lengths and gauges",
-      "Suitable for ovens, heaters and lighting circuits",
-    ],
-    applications: ["Heaters", "Furnaces", "Industrial wiring"],
-  },
-  {
     slug: "chicken-plucker-rubber-finger",
     name: "Chicken Plucker Rubber Finger",
     price: "₹6/Piece",
@@ -552,7 +531,6 @@ export const featuredProducts = [
   "epdm-rubber-gaskets",
   "black-rubber-bellows",
   "round-rubber-bearings",
-  "black-silicone-rubber-cable",
   "black-conductive-rubber",
 ].map((s) => products.find((p) => p.slug === s)!);
 

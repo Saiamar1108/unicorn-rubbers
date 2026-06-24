@@ -58,7 +58,7 @@ function ProductsPage() {
       <section className="py-10">
         <div className="container-page grid lg:grid-cols-[260px_1fr] gap-10">
           {/* sidebar */}
-          <aside className="space-y-7">
+          <aside className="space-y-7 lg:sticky lg:top-24 lg:self-start">
             <div>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -80,7 +80,7 @@ function ProductsPage() {
                   <Link
                     to="/products"
                     search={{ q: "", sort: "default", category: "" }}
-                    className={`block px-3 py-2 rounded text-sm hover:bg-secondary ${!category ? "bg-secondary font-semibold" : ""}`}
+                    className={`block px-3 py-3 rounded text-sm hover:bg-secondary ${!category ? "bg-secondary font-semibold" : ""}`}
                   >
                     All Products
                   </Link>
@@ -90,7 +90,7 @@ function ProductsPage() {
                     <Link
                       to="/products"
                       search={{ q: "", sort: "default", category: c }}
-                      className={`block px-3 py-2 rounded text-sm hover:bg-secondary ${category === c ? "bg-secondary font-semibold text-ember" : ""}`}
+                      className={`block px-3 py-3 rounded text-sm hover:bg-secondary ${category === c ? "bg-secondary font-semibold text-ember" : ""}`}
                     >
                       {c}
                     </Link>
@@ -114,7 +114,7 @@ function ProductsPage() {
 
           {/* grid */}
           <div>
-            <div className="flex justify-between items-center mb-5">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3">
               <div className="text-sm text-muted-foreground">
                 Showing <strong>{filtered.length}</strong> of {products.length} products
                 {category && <> · <span className="text-ember font-semibold">{category}</span></>}
@@ -123,7 +123,7 @@ function ProductsPage() {
             {filtered.length === 0 ? (
               <div className="py-20 text-center text-muted-foreground">No products match your filters.</div>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {filtered.map((p) => <ProductCard key={p.slug} product={p} />)}
               </div>
             )}

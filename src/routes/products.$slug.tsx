@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useMemo, useState } from "react";
 import { ArrowLeft, CheckCircle2, MessageCircle, Phone } from "lucide-react";
 import { getProductBySlug, relatedProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
@@ -37,6 +38,8 @@ export const Route = createFileRoute("/products/$slug")({
 
 function ProductPage() {
   const { product, related } = Route.useLoaderData();
+  const [selectedImage, setSelectedImage] = useState(product.images?.[0] ?? product.image);
+  const images = useMemo(() => product.images?.length ? product.images : [product.image], [product.images, product.image]);
   const waMsg = encodeURIComponent(`Hello Unicorn Rubbers, I'd like a quote for: ${product.name} (${product.price})`);
 
   return (
@@ -54,14 +57,19 @@ function ProductPage() {
         <div className="container-page grid lg:grid-cols-2 gap-12">
           {/* gallery */}
           <div>
-            <div className="aspect-square bg-secondary rounded-lg overflow-hidden border border-border">
-              <img src={product.image} alt={product.name} className="h-full w-full object-contain p-10" />
+            <div className="aspect-[4/3] bg-secondary rounded-lg overflow-hidden border border-border">
+              <img src={selectedImage} alt={product.name} className="h-full w-full object-contain p-6" />
             </div>
-            <div className="grid grid-cols-4 gap-3 mt-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="aspect-square bg-secondary rounded-md border border-border overflow-hidden">
-                  <img src={product.image} alt="" className="h-full w-full object-contain p-3 opacity-80" />
-                </div>
+            <div className="mt-3 flex gap-3 overflow-x-auto pb-1">
+              {images.map((src, index) => (
+                <button
+                  key={`${src}-${index}`}
+                  type="button"
+                  onClick={() => setSelectedImage(src)}
+                  className={`flex-shrink-0 h-20 w-20 rounded-md overflow-hidden border ${selectedImage === src ? "border-ember" : "border-border/60"} bg-secondary`}
+                >
+                  <img src={src} alt={`${product.name} ${index + 1}`} className="h-full w-full object-contain p-2" />
+                </button>
               ))}
             </div>
           </div>
@@ -111,16 +119,16 @@ function ProductPage() {
               </ul>
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <a
                 href={`https://wa.me/919848568605?text=${waMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-md font-semibold"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-md font-semibold"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp Quote
               </a>
-              <a href="tel:+919848568605" className="inline-flex items-center gap-2 bg-ember text-ember-foreground px-5 py-3 rounded-md font-semibold">
+              <a href="tel:+919848568605" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-ember text-ember-foreground px-5 py-3 rounded-md font-semibold">
                 <Phone className="h-4 w-4" /> Call Now
               </a>
             </div>
@@ -150,7 +158,7 @@ function ProductPage() {
         <section className="py-16">
           <div className="container-page">
             <h2 className="font-display text-3xl uppercase mb-6">Related Products</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
               {related.map((p: typeof related[number]) => <ProductCard key={p.slug} product={p} />)}
             </div>
           </div>

@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/unicorn_rubber_logo.jpg.png.asset.json";
 
 export function Footer() {
   return (
@@ -8,7 +7,7 @@ export function Footer() {
       <div className="container-page py-16 grid gap-10 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={logo.url} alt="Unicorn Rubbers" className="h-12 w-auto bg-white p-1 rounded" />
+            <img src="/unicorn_rubber_logo.jpg.png" alt="Unicorn Rubbers" className="h-12 w-auto bg-white p-1 rounded" />
             <div>
               <div className="text-white font-display text-lg">UNICORN RUBBERS</div>
               <div className="text-[10px] tracking-widest uppercase text-ember">Est. 16+ Years</div>
@@ -55,7 +54,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page py-5 text-xs flex flex-col md:flex-row justify-between gap-2 text-white/60">
           <div>© {new Date().getFullYear()} Unicorn Rubbers. All rights reserved. · GSTIN: 36ATTPT3974E1ZY</div>
-          <div>Designed for serious industry partners.</div>
+          <div>Website by Bravix · Marketing contact: 7780186140</div>
         </div>
       </div>
     </footer>

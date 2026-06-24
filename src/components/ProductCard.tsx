@@ -3,18 +3,20 @@ import type { Product } from "@/data/products";
 import { ArrowUpRight } from "lucide-react";
 
 export function ProductCard({ product }: { product: Product }) {
+  const displayImage = product.images?.[0] ?? product.image;
+
   return (
     <Link
       to="/products/$slug"
       params={{ slug: product.slug }}
       className="group flex flex-col bg-white border border-border rounded-lg overflow-hidden hover:border-ember hover:shadow-elevated transition-all"
     >
-      <div className="aspect-square bg-secondary overflow-hidden">
+      <div className="aspect-[4/3] sm:aspect-square bg-secondary overflow-hidden">
         <img
-          src={product.image}
+          src={displayImage}
           alt={product.name}
           loading="lazy"
-          className="h-full w-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+          className="h-full w-full object-contain p-5 sm:p-6 group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <div className="p-4 flex flex-col gap-2 flex-1">

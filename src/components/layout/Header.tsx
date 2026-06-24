@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/unicorn_rubber_logo.jpg.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -43,7 +42,7 @@ export function Header() {
       >
         <div className="container-page flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo.url} alt="Unicorn Rubbers" className="h-12 w-auto" />
+            <img src="/unicorn_rubber_logo.jpg.png" alt="Unicorn Rubbers" className="h-14 w-auto" />
             <div className="hidden sm:block leading-tight">
               <div className="font-display text-xl tracking-wide">UNICORN RUBBERS</div>
               <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -85,7 +84,32 @@ export function Header() {
 
         {open && (
           <div className="lg:hidden border-t border-border bg-white">
-            <div className="container-page py-3 flex flex-col">
+            <div className="container-page py-3 flex flex-col gap-4">
+              <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3 py-3">
+                <img src="/unicorn_rubber_logo.jpg.png" alt="Unicorn Rubbers" className="h-10 w-auto" />
+                <div>
+                  <div className="font-display text-base tracking-wide">UNICORN RUBBERS</div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                    Shaping Quality & Innovation
+                  </div>
+                </div>
+              </Link>
+              <div className="flex flex-wrap gap-2 pb-3 border-b border-border/60">
+                <a
+                  href="https://wa.me/919848568605"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 flex-1 min-w-[150px] bg-[#25D366] text-white px-4 py-3 text-sm font-semibold rounded-md"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href="tel:+919848568605"
+                  className="inline-flex items-center justify-center gap-2 flex-1 min-w-[150px] bg-ember text-ember-foreground px-4 py-3 text-sm font-semibold rounded-md"
+                >
+                  Call Now
+                </a>
+              </div>
               {nav.map((n) => (
                 <Link
                   key={n.to}
@@ -98,12 +122,6 @@ export function Header() {
                   {n.label}
                 </Link>
               ))}
-              <a
-                href="tel:+919848568605"
-                className="mt-3 inline-flex items-center justify-center gap-2 bg-ember text-ember-foreground px-4 py-3 text-sm font-semibold rounded-md"
-              >
-                <Phone className="h-4 w-4" /> +91 98485 68605
-              </a>
             </div>
           </div>
         )}
