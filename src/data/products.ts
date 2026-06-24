@@ -1,28 +1,25 @@
-import gasketImg from "@/assets/epdm-rubber-gaskets-500x500.jpg-2.webp.asset.json";
-import oringImg from "@/assets/download_1.jpeg.asset.json";
-import flangeImg from "@/assets/3097887-product-1737015679575-500x500.jpeg.webp.asset.json";
-import capsImg from "@/assets/3097887-product-1741769765666-500x500.jpeg.webp.asset.json";
-import conductiveImg from "@/assets/black-conductive-rubber-500x500.webp.asset.json";
-import bellowImg from "@/assets/black-rubber-bellow-500x500.jpg.webp.asset.json";
-import bushImg from "@/assets/black-rubber-bushes-500x500.jpg.webp.asset.json";
-import cableImg from "@/assets/black-silicon-rubber-cable-500x500.jpg.webp.asset.json";
-import beadingImg from "@/assets/black-silicone-rubber-beading-500x500.jpg.webp.asset.json";
-
 export type Product = {
   slug: string;
   name: string;
   price: string;
   category: string;
   image: string;
+  images?: string[];
   description: string;
   material: string;
   sizes: string;
   moq: string;
+  specifications: string[];
   applications: string[];
   priceValue: number; // for sorting; 0 = ask price
 };
 
-const I = (a: { url: string }) => a.url;
+const imageBase = "/product-images";
+const baseGallery = [
+  `${imageBase}/product-jpeg-500x500.jpg.webp`,
+  `${imageBase}/product-jpeg-500x500.jpg-2.webp`,
+  `${imageBase}/product-jpeg-500x500.jpg-3.webp`,
+];
 
 export const categories = [
   "Gaskets",
@@ -50,12 +47,19 @@ export const products: Product[] = [
     price: "₹30/Piece",
     priceValue: 30,
     category: "Gaskets",
-    image: I(gasketImg),
+    image: `${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`,
+    images: [`${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`, ...baseGallery],
     description:
       "Precision die-cut NBR (Nitrile) gaskets engineered for oil, fuel and hydraulic sealing in demanding industrial assemblies. Excellent compression set and abrasion resistance.",
     material: "Nitrile (NBR), 60–80 Shore A",
     sizes: "ID 10mm – 600mm, custom shapes on request",
     moq: "100 Pieces",
+    specifications: [
+      "Custom die-cut and molded gasket profiles",
+      "Temperature range: -30°C to +120°C",
+      "Excellent oil and fuel resistance",
+      "Available in flanged and sheet cut sizes",
+    ],
     applications: ["Hydraulics", "Oil & Gas", "Automotive engines", "Pumps & valves"],
   },
   {
@@ -64,12 +68,19 @@ export const products: Product[] = [
     price: "₹20/Piece",
     priceValue: 20,
     category: "Gaskets",
-    image: I(gasketImg),
+    image: `${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`,
+    images: [`${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`, ...baseGallery],
     description:
       "Cost-effective SBR gaskets offering reliable sealing for water, mild chemicals and general industrial flange applications.",
     material: "Styrene Butadiene Rubber, 65 Shore A",
     sizes: "1mm – 12mm thickness, any flange size",
     moq: "100 Pieces",
+    specifications: [
+      "Good abrasion and water resistance",
+      "Economical sealing solution",
+      "Ideal for non-critical flange applications",
+      "Fabricated to custom gasket drawings",
+    ],
     applications: ["Water pipelines", "Pumps", "General sealing"],
   },
   {
@@ -78,12 +89,19 @@ export const products: Product[] = [
     price: "₹40/Piece",
     priceValue: 40,
     category: "Gaskets",
-    image: I(gasketImg),
+    image: `${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`,
+    images: [`${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`, ...baseGallery],
     description:
       "Weather and ozone resistant EPDM gaskets for steam, hot water, and outdoor service. Stable from -40°C to +120°C.",
     material: "EPDM, 70 Shore A",
     sizes: "Standard ANSI/DIN flange sizes",
     moq: "100 Pieces",
+    specifications: [
+      "Ozone and UV resistant",
+      "Excellent hot water and steam sealing",
+      "Available in sponge and solid grades",
+      "Custom cut to round, square and profile shapes",
+    ],
     applications: ["Steam lines", "HVAC", "Water treatment", "Outdoor enclosures"],
   },
   {
@@ -92,12 +110,19 @@ export const products: Product[] = [
     price: "₹60/Piece",
     priceValue: 60,
     category: "Gaskets",
-    image: I(gasketImg),
+    image: `${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`,
+    images: [`${imageBase}/epdm-rubber-gaskets-500x500.jpg-2.webp`, ...baseGallery],
     description:
       "Food-grade and high-temperature silicone gaskets for pharma, food processing, and electrical insulation.",
     material: "Silicone (VMQ), FDA grade available",
     sizes: "Custom moulded or die-cut",
     moq: "50 Pieces",
+    specifications: [
+      "Temperature range up to +230°C",
+      "FDA compliant and food-safe options",
+      "Low compression set for repeated sealing",
+      "Custom profiles for valves and lids",
+    ],
     applications: ["Food & dairy", "Pharma", "Electrical panels"],
   },
   {
@@ -106,12 +131,19 @@ export const products: Product[] = [
     price: "₹350/Piece",
     priceValue: 350,
     category: "Oil Seals",
-    image: I(bushImg),
+    image: `${imageBase}/rubber-v-seals-500x500.jpg-2.webp`,
+    images: [`${imageBase}/rubber-v-seals-500x500.jpg-2.webp`, `${imageBase}/rubber-u-seals-500x500.jpg.webp`],
     description:
       "Precision-engineered rotary shaft oil seals with metal reinforcement, designed for high-speed shafts and long service life.",
     material: "NBR with steel insert & spring",
     sizes: "Shaft Ø 10mm – 300mm",
     moq: "25 Pieces",
+    specifications: [
+      "Dynamic shaft sealing for rotating equipment",
+      "Metal case with tension spring",
+      "Resistant to oil, grease and hydraulic fluids",
+      "Available in metric and imperial sizes",
+    ],
     applications: ["Gearboxes", "Motors", "Pumps", "Heavy machinery"],
   },
   {
@@ -120,12 +152,19 @@ export const products: Product[] = [
     price: "₹20/Piece",
     priceValue: 20,
     category: "Oil Seals",
-    image: I(bushImg),
+    image: `${imageBase}/rubber-u-seals-500x500.jpg.webp`,
+    images: [`${imageBase}/rubber-u-seals-500x500.jpg.webp`, `${imageBase}/rubber-v-seals-500x500.jpg-2.webp`],
     description:
       "Compact NBR seals for general dynamic and static sealing in oil-bearing systems.",
     material: "Nitrile (NBR), 70 Shore A",
     sizes: "ID 5mm – 100mm",
     moq: "200 Pieces",
+    specifications: [
+      "Simple U-profile sealing edge",
+      "Good oil and fuel compatibility",
+      "Low cost for high-volume applications",
+      "Custom sizing to drawing requirements",
+    ],
     applications: ["Hydraulic cylinders", "Compressors", "Valves"],
   },
   {
@@ -134,12 +173,19 @@ export const products: Product[] = [
     price: "₹75/Kg",
     priceValue: 75,
     category: "Rubber Sheets",
-    image: I(conductiveImg),
+    image: `${imageBase}/natural-rubber-sheet-500x500.jpg.webp`,
+    images: [`${imageBase}/natural-rubber-sheet-500x500.jpg.webp`, `${imageBase}/natural-rubber-sheet-500x500.jpg-2.webp`],
     description:
       "High-tensile natural rubber sheets with excellent elasticity and tear resistance. Ideal for gasket cutting and anti-abrasion lining.",
     material: "Natural Rubber, 40–70 Shore A",
     sizes: "1m × 10m rolls, 1mm – 25mm thick",
     moq: "25 Kg",
+    specifications: [
+      "Good tear resistance and resilience",
+      "Available in multiple thicknesses",
+      "Suitable for lining and pad cutting",
+      "Natural rubber compound for general industry",
+    ],
     applications: ["Gasket cutting", "Vibration pads", "Conveyor skirting"],
   },
   {
@@ -148,12 +194,19 @@ export const products: Product[] = [
     price: "Ask Price",
     priceValue: 0,
     category: "Rubber Sheets",
-    image: I(conductiveImg),
+    image: `${imageBase}/natural-rubber-sheet-500x500.jpg.webp`,
+    images: [`${imageBase}/natural-rubber-sheet-500x500.jpg.webp`, `${imageBase}/product-jpeg-500x500.jpeg-3.webp`],
     description:
       "Chemical and weather resistant Neoprene (CR) sheets for outdoor seals, marine and refrigeration use.",
     material: "Chloroprene Rubber (CR)",
     sizes: "1mm – 50mm thickness",
     moq: "Contact us",
+    specifications: [
+      "Excellent oil and weather resistance",
+      "Good ozone and UV stability",
+      "Suitable for marine and refrigeration applications",
+      "Cut to custom sheet and gasket sizes",
+    ],
     applications: ["Marine seals", "Refrigeration", "Cable jackets"],
   },
   {
@@ -162,12 +215,19 @@ export const products: Product[] = [
     price: "Ask Price",
     priceValue: 0,
     category: "O-Rings",
-    image: I(oringImg),
+    image: `${imageBase}/product-jpeg-500x500.jpg.webp`,
+    images: [`${imageBase}/product-jpeg-500x500.jpg.webp`, `${imageBase}/product-jpeg-500x500.jpg-2.webp`],
     description:
       "Precision NBR O-rings to AS568 and metric standards for hydraulic and pneumatic sealing.",
     material: "Nitrile (NBR), 70/90 Shore A",
     sizes: "All standard AS568 + metric sizes",
     moq: "500 Pieces",
+    specifications: [
+      "AS568 and custom metric sizes",
+      "High compression set resistance",
+      "Excellent resistance to fuels and oils",
+      "Manufactured to customer size and hardness",
+    ],
     applications: ["Hydraulics", "Pneumatics", "Plumbing"],
   },
   {
@@ -176,12 +236,19 @@ export const products: Product[] = [
     price: "Ask Price",
     priceValue: 0,
     category: "O-Rings",
-    image: I(oringImg),
+    image: `${imageBase}/product-jpeg-500x500.jpg.webp`,
+    images: [`${imageBase}/product-jpeg-500x500.jpg.webp`, `${imageBase}/product-jpeg-500x500.jpeg-2.webp`],
     description:
       "FDA-grade silicone O-rings rated -60°C to +230°C for food, pharma and high-temperature service.",
     material: "Silicone (VMQ), FDA",
     sizes: "Custom + AS568",
     moq: "200 Pieces",
+    specifications: [
+      "Wide temperature range -60°C to +230°C",
+      "FDA and food-grade options",
+      "Low compression set for reliable sealing",
+      "Custom sizes and shore hardness available",
+    ],
     applications: ["Food machinery", "Medical devices", "Steam systems"],
   },
   {
@@ -190,12 +257,19 @@ export const products: Product[] = [
     price: "₹120/Piece",
     priceValue: 120,
     category: "Custom Molded",
-    image: I(flangeImg),
+    image: `${imageBase}/rubber-check-valve-500x500.jpeg.webp`,
+    images: [`${imageBase}/rubber-check-valve-500x500.jpeg.webp`, `${imageBase}/product-jpeg-500x500.jpeg-2.webp`],
     description:
       "Duckbill / flap rubber check valves for non-return flow control in effluent, drainage and tank outlets.",
     material: "EPDM or NBR",
     sizes: "DN25 – DN300",
     moq: "10 Pieces",
+    specifications: [
+      "Flexible duckbill or flap design",
+      "Resistant to water and wastewater",
+      "Custom molded to pipe sizes",
+      "Reliable non-return protection",
+    ],
     applications: ["Sewage", "ETP/STP", "Tank outlets"],
   },
   {
@@ -204,12 +278,19 @@ export const products: Product[] = [
     price: "₹10/Piece",
     priceValue: 10,
     category: "Washers",
-    image: I(gasketImg),
+    image: `${imageBase}/rubber-tank-washer-500x500.jpeg.webp`,
+    images: [`${imageBase}/rubber-tank-washer-500x500.jpeg.webp`, ...baseGallery],
     description:
       "Heavy-duty rubber washers engineered for leak-proof water tank connections.",
     material: "EPDM / NBR",
     sizes: "1/2\" – 4\" BSP",
     moq: "500 Pieces",
+    specifications: [
+      "Designed for tank fittings and faucets",
+      "Resistant to UV and water ingress",
+      "Available in nitrile and EPDM grades",
+      "Custom thicknesses for sealing applications",
+    ],
     applications: ["Overhead tanks", "Plumbing", "Storage tanks"],
   },
   {
@@ -218,12 +299,19 @@ export const products: Product[] = [
     price: "₹150/Piece",
     priceValue: 150,
     category: "Bearings",
-    image: I(bushImg),
+    image: `${imageBase}/rubber-bearings-500x500.jpg.webp`,
+    images: [`${imageBase}/rubber-bearings-500x500.jpg.webp`, ...baseGallery],
     description:
       "Vibration-damping cylindrical rubber bearings for structural and mechanical isolation.",
     material: "Natural Rubber + Steel plate",
     sizes: "Ø 50mm – 300mm",
     moq: "20 Pieces",
+    specifications: [
+      "Cylindrical anti-vibration mountings",
+      "Steel-reinforced rubber core",
+      "Suitable for machinery and structure isolation",
+      "Custom diameters available",
+    ],
     applications: ["Bridges", "Pumps", "Heavy machinery mounts"],
   },
   {
@@ -232,12 +320,19 @@ export const products: Product[] = [
     price: "₹100/Meter",
     priceValue: 100,
     category: "Silicone",
-    image: I(cableImg),
+    image: `${imageBase}/black-silicone-rubber-cable-500x500.jpg.webp`,
+    images: [`${imageBase}/black-silicone-rubber-cable-500x500.jpg.webp`, ...baseGallery],
     description:
       "High-temperature silicone insulated cable for industrial heaters, lighting, and harsh environments.",
     material: "Silicone, tinned copper conductor",
     sizes: "0.5 sqmm – 25 sqmm",
     moq: "100 Meters",
+    specifications: [
+      "Silicone insulation for heat and chemical resistance",
+      "Flexible conductor for industrial wiring",
+      "Available in custom lengths and gauges",
+      "Suitable for ovens, heaters and lighting circuits",
+    ],
     applications: ["Heaters", "Furnaces", "Industrial wiring"],
   },
   {
@@ -246,12 +341,19 @@ export const products: Product[] = [
     price: "₹6/Piece",
     priceValue: 6,
     category: "Poultry",
-    image: I(oringImg),
+    image: `${imageBase}/product-jpeg-500x500.jpeg-2.webp`,
+    images: [`${imageBase}/product-jpeg-500x500.jpeg-2.webp`, `${imageBase}/product-jpeg-500x500.jpeg.webp`],
     description:
       "Durable natural rubber plucker fingers for poultry de-feathering machines. Soft yet abrasion resistant.",
     material: "Natural Rubber, food-safe",
     sizes: "Standard 80mm / custom",
     moq: "500 Pieces",
+    specifications: [
+      "Food-safe natural rubber compound",
+      "Abrasion-resistant for repeated use",
+      "Flexible design for plucker drums",
+      "Available in standard and custom lengths",
+    ],
     applications: ["Poultry processing", "Plucker drums"],
   },
   {
@@ -260,12 +362,19 @@ export const products: Product[] = [
     price: "₹100/Kg",
     priceValue: 100,
     category: "Conductive Rubber",
-    image: I(conductiveImg),
+    image: `${imageBase}/black-conductive-rubber-500x500.webp`,
+    images: [`${imageBase}/black-conductive-rubber-500x500.webp`, ...baseGallery],
     description:
       "Carbon-loaded conductive rubber sheets for ESD-safe surfaces, antistatic flooring and electronic assembly.",
     material: "Carbon-filled NR/NBR",
     sizes: "Rolls / cut sheets, 2–10mm",
     moq: "10 Kg",
+    specifications: [
+      "Conductive carbon filled rubber",
+      "ESD-safe surface protection",
+      "Available in sheets and cut parts",
+      "Good abrasion resistance for industrial use",
+    ],
     applications: ["Electronics", "ESD flooring", "EMI shielding"],
   },
   {
@@ -274,12 +383,19 @@ export const products: Product[] = [
     price: "₹50/Meter",
     priceValue: 50,
     category: "Rubber Cords",
-    image: I(beadingImg),
+    image: `${imageBase}/round-rubber-cords-500x500.jpeg.webp`,
+    images: [`${imageBase}/round-rubber-cords-500x500.jpeg.webp`, ...baseGallery],
     description:
       "Solid extruded round cords for custom O-rings, sealing strips and gasket making.",
     material: "EPDM / NBR / Silicone",
     sizes: "Ø 2mm – 50mm",
     moq: "50 Meters",
+    specifications: [
+      "Solid extruded cord for sealing applications",
+      "Available in EPDM, NBR and silicone",
+      "Ideal for custom O-rings and gaskets",
+      "Precision diameters from 2mm to 50mm",
+    ],
     applications: ["Door seals", "Custom O-rings", "Cabinet sealing"],
   },
   {
@@ -288,12 +404,19 @@ export const products: Product[] = [
     price: "₹20/Piece",
     priceValue: 20,
     category: "Bushes",
-    image: I(bushImg),
+    image: `${imageBase}/black-rubber-bushes-500x500.jpg.webp`,
+    images: [`${imageBase}/black-rubber-bushes-500x500.jpg.webp`, ...baseGallery],
     description:
       "Anti-vibration rubber bushes for automotive suspension, machine mounts and structural isolation.",
     material: "Natural Rubber / Polyurethane",
     sizes: "Custom OD/ID per drawing",
     moq: "100 Pieces",
+    specifications: [
+      "High-performance vibration damping",
+      "Custom molded to fit brackets and studs",
+      "Suitable for automotive and machinery mounts",
+      "Available in bonded and plain compound options",
+    ],
     applications: ["Suspensions", "Machine mounts", "Pumps"],
   },
   {
@@ -302,12 +425,19 @@ export const products: Product[] = [
     price: "₹300/Piece",
     priceValue: 300,
     category: "Bellows",
-    image: I(bellowImg),
+    image: `${imageBase}/black-rubber-bellow-500x500.jpg.webp`,
+    images: [`${imageBase}/black-rubber-bellow-500x500.jpg.webp`, ...baseGallery],
     description:
       "Flexible rubber bellows protecting shafts, joints and pneumatic components from dust and contamination.",
     material: "Neoprene / EPDM",
     sizes: "Ø 20mm – 250mm",
     moq: "25 Pieces",
+    specifications: [
+      "Abrasion-resistant bellows construction",
+      "Flexible protection for joints and shafts",
+      "Suitable for pneumatic and hydraulic systems",
+      "Custom shapes and lengths available",
+    ],
     applications: ["CV joints", "Pneumatic cylinders", "Machine tools"],
   },
   {
@@ -316,12 +446,19 @@ export const products: Product[] = [
     price: "₹7/Piece",
     priceValue: 7,
     category: "Caps & Tips",
-    image: I(capsImg),
+    image: `${imageBase}/3097887-product-1741769765666-500x500.jpeg.webp`,
+    images: [`${imageBase}/3097887-product-1741769765666-500x500.jpeg.webp`, `${imageBase}/rubber-caps-500x500.jpg.webp`],
     description:
       "Non-slip rubber leg tips for furniture, ladders, and equipment. Floor-protective and silent.",
     material: "Natural Rubber, 70 Shore A",
     sizes: "Ø 12mm – 50mm",
     moq: "500 Pieces",
+    specifications: [
+      "Slip-resistant rubber compound",
+      "Protects floors and reduces noise",
+      "Fits tubular legs and handles",
+      "Available in multiple diameters",
+    ],
     applications: ["Furniture", "Ladders", "Lab equipment"],
   },
   {
@@ -330,12 +467,19 @@ export const products: Product[] = [
     price: "₹2000/Square Meter",
     priceValue: 2000,
     category: "Tanks & Linings",
-    image: I(conductiveImg),
+    image: `${imageBase}/product-jpeg-500x500.jpeg-3.webp`,
+    images: [`${imageBase}/product-jpeg-500x500.jpeg-3.webp`, `${imageBase}/product-jpeg-500x500.jpg-3.webp`],
     description:
       "Acid and abrasion resistant rubber lining for storage tanks, pickling lines and chemical vessels. On-site application available.",
     material: "Soft NR / Hard Ebonite / Butyl",
     sizes: "Custom per tank drawing",
     moq: "Project basis",
+    specifications: [
+      "Custom rubber lining for tanks and vessels",
+      "Resistant to acids, alkalis and abrasion",
+      "On-site installation support available",
+      "Suitable for chemical and process industry",
+    ],
     applications: ["Chemical tanks", "Pickling", "Electroplating"],
   },
   {
@@ -344,12 +488,19 @@ export const products: Product[] = [
     price: "Ask Price",
     priceValue: 0,
     category: "Anti-Vibration",
-    image: I(conductiveImg),
+    image: `${imageBase}/product-jpeg-500x500.jpg-3.webp`,
+    images: [`${imageBase}/product-jpeg-500x500.jpg-3.webp`, `${imageBase}/product-jpeg-500x500.jpeg-3.webp`],
     description:
       "Ribbed or waffle pattern anti-vibration pads to isolate compressors, generators and rotating machinery.",
     material: "Natural Rubber + fabric reinforcement",
     sizes: "300×300mm and custom sheets",
     moq: "20 Pieces",
+    specifications: [
+      "High-load vibration isolation pads",
+      "Available in ribbed or waffle textures",
+      "Suitable for generators and compressors",
+      "Custom dimensions and thickness available",
+    ],
     applications: ["Compressors", "Generators", "HVAC equipment"],
   },
   {
@@ -358,12 +509,19 @@ export const products: Product[] = [
     price: "Ask Price",
     priceValue: 0,
     category: "O-Rings",
-    image: I(oringImg),
+    image: `${imageBase}/product-jpeg-500x500.jpg.webp`,
+    images: [`${imageBase}/product-jpeg-500x500.jpg.webp`, `${imageBase}/product-jpeg-500x500.jpg-2.webp`],
     description:
       "Custom rubber rings and sealing rings manufactured to client drawings.",
     material: "NBR / EPDM / Silicone",
     sizes: "As per drawing",
     moq: "100 Pieces",
+    specifications: [
+      "Custom ring shapes and compound selections",
+      "Precision molded to tolerance",
+      "Suitable for sealing and cushioning",
+      "Available in multiple hardness levels",
+    ],
     applications: ["Sealing", "Vibration damping"],
   },
   {
@@ -372,12 +530,19 @@ export const products: Product[] = [
     price: "Ask Price",
     priceValue: 0,
     category: "Caps & Tips",
-    image: I(capsImg),
+    image: `${imageBase}/rubber-caps-500x500.jpg.webp`,
+    images: [`${imageBase}/rubber-caps-500x500.jpg.webp`, `${imageBase}/3097887-product-1741769765666-500x500.jpeg.webp`],
     description:
       "Protective rubber caps for pipe ends, bolts, terminals and machine handles.",
     material: "NR / NBR / Silicone",
     sizes: "Ø 4mm – 100mm",
     moq: "500 Pieces",
+    specifications: [
+      "Protective end caps for pipes and bolts",
+      "Available in multiple diameters and lengths",
+      "Soft rubber surface prevents damage",
+      "Suitable for shipping and storage protection",
+    ],
     applications: ["Pipe protection", "Terminals", "Handles"],
   },
 ];
