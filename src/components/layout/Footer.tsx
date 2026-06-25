@@ -20,12 +20,12 @@ export function Footer() {
             />
             <div>
               <div className="text-white font-display text-lg">UNICORN RUBBERS</div>
-              <div className="text-[10px] tracking-widest uppercase text-ember">Est. 16+ Years</div>
+              <div className="text-[10px] tracking-widest uppercase text-ember">Est. 14+ Years</div>
             </div>
           </div>
           <p className="text-sm leading-relaxed">
             Manufacturer & supplier of precision-engineered industrial rubber products.
-            Shaping quality and innovation in rubber since 2008.
+            Shaping quality and innovation in rubber since 2012.
           </p>
         </div>
 

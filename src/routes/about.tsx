@@ -5,10 +5,10 @@ import hero from "@/assets/hero-factory.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Unicorn Rubbers — 16+ Years Industrial Rubber Manufacturer" },
-      { name: "description", content: "Unicorn Rubbers is a Hyderabad-based manufacturer of industrial rubber components with 16+ years of expertise, in-house tooling and end-to-end quality control." },
+      { title: "About Unicorn Rubbers — 14+ Years Industrial Rubber Manufacturer" },
+      { name: "description", content: "Unicorn Rubbers is a Hyderabad-based manufacturer of industrial rubber components with 14+ years of expertise, in-house tooling and end-to-end quality control." },
       { property: "og:title", content: "About Unicorn Rubbers" },
-      { property: "og:description", content: "16+ years engineering rubber components for industrial India." },
+      { property: "og:description", content: "14+ years engineering rubber components for industrial India." },
     ],
   }),
   component: About,
@@ -33,9 +33,9 @@ function About() {
           <div>
             <h2 className="font-display text-3xl md:text-4xl uppercase">Our Story</h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Unicorn Rubbers was founded in 2008 in Jeedimetla, Hyderabad — one of India's largest
+              Unicorn Rubbers was founded in 2012 in Jeedimetla, Hyderabad — one of India's largest
               industrial estates — with a single objective: deliver rubber components that industrial
-              buyers can rely on, batch after batch. Over 16+ years we have grown into a trusted
+              buyers can rely on, batch after batch. Over 14+ years we have grown into a trusted
               manufacturer and supplier serving OEMs, contractors, EPC companies and trading houses
               across the country.
             </p>

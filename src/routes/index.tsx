@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Unicorn Rubbers — Industrial Rubber Manufacturer | Hyderabad" },
-      { name: "description", content: "16+ years manufacturing precision industrial rubber products: gaskets, O-rings, seals, bellows, bushes and custom moulded parts. Bulk supply across India." },
+      { name: "description", content: "14+ years manufacturing precision industrial rubber products: gaskets, O-rings, seals, bellows, bushes and custom moulded parts. Bulk supply across India." },
       { property: "og:title", content: "Unicorn Rubbers — Industrial Rubber Manufacturer" },
       { property: "og:description", content: "Precision rubber components for automotive, industrial, water, electrical and poultry industries." },
     ],
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { v: "16+", l: "Years of Expertise" },
+  { v: "14+", l: "Years of Expertise" },
   { v: "500+", l: "Industrial Clients" },
   { v: "10K+", l: "SKUs Delivered" },
   { v: "100%", l: "Quality Assured" },
@@ -43,7 +43,7 @@ function HomePage() {
         <div className="absolute inset-0 grid-noise opacity-20" />
         <div className="relative container-page py-24 md:py-36 max-w-3xl">
           <div className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-ember font-semibold mb-5">
-            <span className="h-px w-8 bg-ember" /> Established 2008 · Hyderabad
+            <span className="h-px w-8 bg-ember" /> Established 2012 · Hyderabad
           </div>
           <h1 className="font-display text-5xl md:text-7xl leading-[0.95] uppercase">
             Shaping Quality &<br />
@@ -114,7 +114,7 @@ function HomePage() {
           <div>
             <div className="text-[11px] tracking-[0.25em] uppercase text-ember font-semibold mb-3">About Unicorn Rubbers</div>
             <h2 className="font-display text-4xl md:text-5xl uppercase leading-tight">
-              16+ Years Engineering<br />Rubber For Industry
+              14+ Years Engineering<br />Rubber For Industry
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
               From our Jeedimetla facility in Hyderabad, Unicorn Rubbers manufactures a full range of
