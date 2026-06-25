@@ -26,6 +26,9 @@ function Contact() {
             Quotes, technical questions, custom moulding briefs or bulk inquiries — our team
             responds within one business day.
           </p>
+          <div className="mt-6 p-4 bg-ember/20 border border-ember/50 rounded-lg max-w-xl">
+            <p className="text-sm text-white"><strong>Note:</strong> Minimum order bill is ₹2,000</p>
+          </div>
         </div>
       </section>
 
@@ -33,7 +36,7 @@ function Contact() {
         <div className="container-page grid lg:grid-cols-[1fr_1.2fr] gap-10">
           <div className="space-y-5">
             {[
-              { i: MapPin, t: "Visit Us", d: "Plot No. 748, Rami Reddy Nagar, IDA, Jeedimetla, Hyderabad – 500055, Telangana, India" },
+              { i: MapPin, t: "Visit Us", d: "Unicorn Rubbers, Rami Reddy Nagar, Jeedimetla, Hyderabad, Telangana 500055" },
               { i: Phone, t: "Call Us", d: "+91 98485 68605", href: "tel:+919848568605" },
               { i: Mail, t: "Email", d: "unicornhyderabad@gmail.com", href: "mailto:unicornhyderabad@gmail.com" },
               { i: MessageCircle, t: "WhatsApp", d: "Chat with our team", href: `https://wa.me/919848568605?text=${waMsg}` },
@@ -68,7 +71,7 @@ function Contact() {
           <div className="aspect-[16/8] rounded-lg overflow-hidden border border-border">
             <iframe
               title="Unicorn Rubbers location"
-              src="https://www.google.com/maps?q=Plot+No+748,+Rami+Reddy+Nagar,+IDA+Jeedimetla,+Hyderabad+500055&output=embed"
+              src="https://www.google.com/maps?q=Unicorn+Rubbers,+Rami+Reddy+Nagar,+Jeedimetla,+Hyderabad,+Telangana+500055&output=embed"
               width="100%"
               height="100%"
               loading="lazy"

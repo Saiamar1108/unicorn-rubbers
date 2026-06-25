@@ -16,6 +16,7 @@ export const Route = createFileRoute("/faqs")({
 
 const faqs = [
   { q: "What is your minimum order quantity (MOQ)?", a: "MOQ depends on the product and tooling. Standard catalogue items typically start from 50–500 pieces. For custom moulded parts, MOQ is decided per drawing and compound. Share your requirement and we'll confirm." },
+  { q: "What is the minimum order bill?", a: "The minimum order bill is ₹2,000. This ensures efficient processing and logistics for both our operations and yours." },
   { q: "What is the typical delivery / lead time?", a: "Stock items are dispatched in 2–5 working days. Bulk production runs take 7–15 days. Custom tooling adds 7–10 days for first article. Express timelines available on request." },
   { q: "Do you take custom moulding orders?", a: "Yes. Custom moulding is a core part of our business. Share a drawing, sample or sketch — we'll recommend compound, tooling and pricing." },
   { q: "Which rubber materials do you work with?", a: "Natural Rubber, NBR (Nitrile), EPDM, Neoprene (CR), SBR, Silicone (VMQ), Butyl, Hypalon and Polyurethane across 30–90 Shore A hardness." },
