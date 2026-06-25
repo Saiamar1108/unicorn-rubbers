@@ -2,6 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 
+const logoSrc = "/__l5e/assets-v1/df58d25e-ba32-48fc-b559-2510d4fad2f3/unicorn_rubber_logo.jpg.png";
+const logoFallback = "/favicon.ico";
+
 const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
@@ -42,7 +45,14 @@ export function Header() {
       >
         <div className="container-page flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/unicorn_rubber_logo.jpg.png" alt="Unicorn Rubbers" className="h-14 w-auto" />
+            <img
+              src={logoSrc}
+              alt="Unicorn Rubbers"
+              className="h-14 w-auto"
+              onError={(event) => {
+                event.currentTarget.src = logoFallback;
+              }}
+            />
             <div className="hidden sm:block leading-tight">
               <div className="font-display text-xl tracking-wide">UNICORN RUBBERS</div>
               <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -86,7 +96,14 @@ export function Header() {
           <div className="lg:hidden border-t border-border bg-white">
             <div className="container-page py-3 flex flex-col gap-4">
               <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3 py-3">
-                <img src="/unicorn_rubber_logo.jpg.png" alt="Unicorn Rubbers" className="h-10 w-auto" />
+                <img
+                src={logoSrc}
+                alt="Unicorn Rubbers"
+                className="h-10 w-auto"
+                onError={(event) => {
+                  event.currentTarget.src = logoFallback;
+                }}
+              />
                 <div>
                   <div className="font-display text-base tracking-wide">UNICORN RUBBERS</div>
                   <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">

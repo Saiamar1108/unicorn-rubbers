@@ -1,13 +1,23 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 
+const logoSrc = "/__l5e/assets-v1/df58d25e-ba32-48fc-b559-2510d4fad2f3/unicorn_rubber_logo.jpg.png";
+const logoFallback = "/favicon.ico";
+
 export function Footer() {
   return (
     <footer className="bg-ink text-white/80 mt-20">
       <div className="container-page py-16 grid gap-10 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src="/unicorn_rubber_logo.jpg.png" alt="Unicorn Rubbers" className="h-12 w-auto bg-white p-1 rounded" />
+            <img
+              src={logoSrc}
+              alt="Unicorn Rubbers"
+              className="h-12 w-auto bg-white p-1 rounded"
+              onError={(event) => {
+                event.currentTarget.src = logoFallback;
+              }}
+            />
             <div>
               <div className="text-white font-display text-lg">UNICORN RUBBERS</div>
               <div className="text-[10px] tracking-widest uppercase text-ember">Est. 16+ Years</div>

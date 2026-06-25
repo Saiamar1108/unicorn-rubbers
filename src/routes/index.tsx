@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, CheckCircle2, Factory, Layers, ShieldCheck, Truck, Wrench } from "lucide-react";
+import { ArrowRight, Award, CheckCircle2, Factory, Layers, MapPin, ShieldCheck, Truck, Wrench } from "lucide-react";
 import hero from "@/assets/hero-factory.jpg";
 import { featuredProducts, categories } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
@@ -69,6 +69,41 @@ function HomePage() {
                 <div className="text-xs uppercase tracking-wider text-white/60 mt-1">{s.l}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MAP */}
+      <section className="py-20 bg-secondary">
+        <div className="container-page grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
+          <div>
+            <div className="text-[11px] tracking-[0.25em] uppercase text-ember font-semibold mb-3">Visit Our Factory</div>
+            <h2 className="font-display text-4xl md:text-5xl uppercase">Hyderabad Manufacturing Hub</h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed max-w-2xl">
+              Our Jeedimetla facility manufactures precision rubber components for automotive, water,
+              electrical and industrial applications. Visit us for material demos, tooling reviews
+              and quick sample approvals.
+            </p>
+            <div className="mt-8 grid gap-4 text-sm">
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 shrink-0 text-ember mt-1" />
+                <div>Plot No. 748, Rami Reddy Nagar, IDA, Jeedimetla, Hyderabad – 500055</div>
+              </div>
+              <div className="text-sm">
+                <span className="font-semibold">Phone:</span> <a href="tel:+919848568605" className="hover:text-ember">+91 98485 68605</a>
+              </div>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-3xl border border-border aspect-[16/10]">
+            <iframe
+              title="Unicorn Rubbers Hyderabad factory map"
+              src="https://www.google.com/maps?q=Plot+No+748,+Rami+Reddy+Nagar,+IDA+Jeedimetla,+Hyderabad+500055&output=embed"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ border: 0 }}
+            />
           </div>
         </div>
       </section>
