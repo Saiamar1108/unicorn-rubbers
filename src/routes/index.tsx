@@ -37,10 +37,10 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-ink text-white overflow-hidden">
-        <img src={hero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-transparent" />
-        <div className="absolute inset-0 grid-noise opacity-40" />
+      <section className="relative bg-slate-50 text-slate-900 overflow-hidden">
+        <img src={hero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/95 to-transparent" />
+        <div className="absolute inset-0 grid-noise opacity-20" />
         <div className="relative container-page py-24 md:py-36 max-w-3xl">
           <div className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-ember font-semibold mb-5">
             <span className="h-px w-8 bg-ember" /> Established 2008 · Hyderabad
@@ -49,7 +49,7 @@ function HomePage() {
             Shaping Quality &<br />
             <span className="text-ember">Innovation</span> In Rubber
           </h1>
-          <p className="mt-6 text-lg text-white/75 max-w-2xl">
+          <p className="mt-6 text-lg text-slate-600 max-w-2xl">
             Precision-engineered industrial rubber products — gaskets, O-rings, seals, bellows, bushes
             and custom moulded components. Built for OEMs and industries that don't tolerate failure.
           </p>
@@ -57,16 +57,16 @@ function HomePage() {
             <Link to="/products" className="inline-flex items-center gap-2 bg-ember text-ember-foreground px-6 py-3.5 font-semibold rounded-md hover:opacity-90">
               Explore Products <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link to="/contact" className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3.5 font-semibold rounded-md hover:border-ember hover:text-ember">
+            <Link to="/contact" className="inline-flex items-center gap-2 border border-slate-300 text-slate-900 px-6 py-3.5 font-semibold rounded-md hover:border-ember hover:text-ember">
               Request a Quote
             </Link>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl border-t border-white/10 pt-8">
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl border-t border-slate-200 pt-8">
             {stats.map((s) => (
               <div key={s.l}>
                 <div className="font-display text-4xl text-ember">{s.v}</div>
-                <div className="text-xs uppercase tracking-wider text-white/60 mt-1">{s.l}</div>
+                <div className="text-xs uppercase tracking-wider text-slate-500 mt-1">{s.l}</div>
               </div>
             ))}
           </div>
@@ -87,7 +87,7 @@ function HomePage() {
             <div className="mt-8 grid gap-4 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 text-ember mt-1" />
-                <div>Plot No. 748, Rami Reddy Nagar, IDA, Jeedimetla, Hyderabad – 500055</div>
+                <div>Unicorn Rubbers, Rami Reddy Nagar, Jeedimetla, Hyderabad, Telangana 500055</div>
               </div>
               <div className="text-sm">
                 <span className="font-semibold">Phone:</span> <a href="tel:+919848568605" className="hover:text-ember">+91 98485 68605</a>
@@ -97,7 +97,7 @@ function HomePage() {
           <div className="overflow-hidden rounded-3xl border border-border aspect-[16/10]">
             <iframe
               title="Unicorn Rubbers Hyderabad factory map"
-              src="https://www.google.com/maps?q=Plot+No+748,+Rami+Reddy+Nagar,+IDA+Jeedimetla,+Hyderabad+500055&output=embed"
+              src="https://www.google.com/maps?q=Unicorn+Rubbers,+Rami+Reddy+Nagar,+Jeedimetla,+Hyderabad,+Telangana+500055&output=embed"
               width="100%"
               height="100%"
               loading="lazy"

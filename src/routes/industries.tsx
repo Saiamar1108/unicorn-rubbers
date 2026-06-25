@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Car, Building2, Sprout, UtensilsCrossed, Bird, Zap, Cog, Droplets } from "lucide-react";
+import { Car, Building2, Sprout, UtensilsCrossed, Bird, Zap, Cog, Droplets, Pill } from "lucide-react";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -24,6 +24,7 @@ const list = [
   { i: Droplets, t: "Water Treatment", d: "Tank linings, check valves, flange gaskets and chemical-resistant components for ETP, STP and municipal water projects." },
   { i: Building2, t: "Defence", d: "Ballistic-grade seals, shock mounts and specialised rubber components for defense, aerospace and security equipment." },
   { i: Cog, t: "Military", d: "Rugged military-grade O-rings, grommets, seals and vibration control parts designed for harsh field environments." },
+  { i: Pill, t: "Pharma", d: "Medical-grade seals, tubing and gaskets for pharmaceutical equipment, diagnostic devices and sterile manufacturing processes." },
 ];
 
 function Industries() {
@@ -34,7 +35,7 @@ function Industries() {
           <div className="text-[11px] tracking-[0.25em] uppercase text-ember font-semibold mb-3">Sectors</div>
           <h1 className="font-display text-5xl md:text-6xl uppercase">Industries We Serve</h1>
           <p className="mt-5 max-w-2xl text-white/70">
-            Eight core sectors. Hundreds of applications. One quality standard.
+            Eleven core sectors. Hundreds of applications. One quality standard.
           </p>
         </div>
       </section>
