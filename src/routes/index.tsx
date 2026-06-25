@@ -31,7 +31,7 @@ const why = [
   { icon: Truck, t: "Reliable Bulk Supply", d: "Consistent on-time despatch pan-India for OEMs, EPCs and traders." },
 ];
 
-const industries = ["Automotive", "Construction", "Agriculture", "Food", "Poultry", "Electrical", "Industrial Machinery", "Water Treatment"];
+const industries = ["Automotive", "Construction", "Agriculture", "Food", "Poultry", "Electrical", "Industrial Machinery", "Water Treatment", "Defence", "Military"];
 
 function HomePage() {
   return (

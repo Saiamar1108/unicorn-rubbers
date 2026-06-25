@@ -5,9 +5,9 @@ export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
       { title: "Industries We Serve | Unicorn Rubbers" },
-      { name: "description", content: "Unicorn Rubbers supplies rubber components to automotive, construction, agriculture, food, poultry, electrical, industrial machinery and water treatment sectors." },
+      { name: "description", content: "Unicorn Rubbers supplies rubber components to automotive, construction, agriculture, food, poultry, electrical, defence, military, industrial machinery and water treatment sectors." },
       { property: "og:title", content: "Industries Served — Unicorn Rubbers" },
-      { property: "og:description", content: "Industrial rubber products engineered for eight core sectors." },
+      { property: "og:description", content: "Industrial rubber products engineered for ten core sectors." },
     ],
   }),
   component: Industries,
@@ -22,6 +22,8 @@ const list = [
   { i: Zap, t: "Electrical", d: "Cable insulation, conductive rubber for ESD applications, panel gaskets and silicone heat-resistant sleeving." },
   { i: Cog, t: "Industrial Machinery", d: "Oil seals, bellows, anti-vibration mounts, gaskets and custom moulded parts for pumps, gearboxes and rotating equipment." },
   { i: Droplets, t: "Water Treatment", d: "Tank linings, check valves, flange gaskets and chemical-resistant components for ETP, STP and municipal water projects." },
+  { i: Building2, t: "Defence", d: "Ballistic-grade seals, shock mounts and specialised rubber components for defense, aerospace and security equipment." },
+  { i: Cog, t: "Military", d: "Rugged military-grade O-rings, grommets, seals and vibration control parts designed for harsh field environments." },
 ];
 
 function Industries() {
