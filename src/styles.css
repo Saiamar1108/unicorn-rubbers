@@ -136,3 +136,13 @@
     linear-gradient(to bottom, oklch(1 0 0 / 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
 }
+
+/* Hide Lovable edit button and related overlays */
+[data-lovable],
+[data-lovable-editor],
+.lovable-edit,
+#lovable-edit,
+iframe[src*="lovable"],
+.lovable-overlay {
+  display: none !important;
+}
