@@ -20,7 +20,7 @@ const faqs = [
   { q: "Do you take custom moulding orders?", a: "Yes. Custom moulding is a core part of our business. Share a drawing, sample or sketch — we'll recommend compound, tooling and pricing." },
   { q: "Which rubber materials do you work with?", a: "Natural Rubber, NBR (Nitrile), EPDM, Neoprene (CR), SBR, Silicone (VMQ), Butyl, Hypalon and Polyurethane across 30–90 Shore A hardness." },
   { q: "Do you accept bulk and project orders?", a: "Absolutely. We regularly supply OEMs, EPC contractors, traders and large industrial buyers with monthly or project-based volumes." },
-  { q: "What are your accepted payment methods?", a: "Bank transfer (NEFT/RTGS), UPI and cheque. Credit terms are available to approved repeat customers." },
+  { q: "What are your accepted payment methods?", a: "Bank transfer (NEFT/RTGS) and cheque. Credit terms are available to approved repeat customers." },
   { q: "Where do you ship?", a: "We dispatch across India through trusted logistics partners. Export despatch is supported on request." },
   { q: "Do your products carry a warranty?", a: "Yes. All products are warranted against manufacturing defects. Custom items carry first-article approval before bulk production." },
 ];

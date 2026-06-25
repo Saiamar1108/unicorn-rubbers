@@ -16,7 +16,7 @@ export const Route = createFileRoute("/products/$slug")({
     return {
       meta: p
         ? [
-            { title: `${p.name} — ${p.price} | Unicorn Rubbers` },
+            { title: `${p.name} | Unicorn Rubbers` },
             { name: "description", content: `${p.name} manufactured by Unicorn Rubbers. ${p.description}` },
             { property: "og:title", content: `${p.name} | Unicorn Rubbers` },
             { property: "og:description", content: p.description },
@@ -40,7 +40,7 @@ function ProductPage() {
   const { product, related } = Route.useLoaderData();
   const [selectedImage, setSelectedImage] = useState(product.images?.[0] ?? product.image);
   const images = useMemo(() => product.images?.length ? product.images : [product.image], [product.images, product.image]);
-  const waMsg = encodeURIComponent(`Hello Unicorn Rubbers, I'd like a quote for: ${product.name} (${product.price})`);
+  const waMsg = encodeURIComponent(`Hello Unicorn Rubbers, I'd like a quote for: ${product.name}`);
 
   return (
     <>
@@ -82,7 +82,6 @@ function ProductPage() {
             <div className="text-[11px] tracking-[0.25em] uppercase text-ember font-semibold mb-2">{product.category}</div>
             <h1 className="font-display text-4xl md:text-5xl uppercase leading-tight">{product.name}</h1>
             <div className="mt-5 flex items-center gap-3">
-              <span className="font-display text-3xl text-ember">{product.price}</span>
               <span className="text-xs uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-1">
                 MOQ: {product.moq}
               </span>

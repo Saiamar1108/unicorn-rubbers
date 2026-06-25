@@ -236,8 +236,8 @@ export const products: Product[] = [
     price: "Ask Price",
     priceValue: 0,
     category: "O-Rings",
-    image: `${imageBase}/product-jpeg-500x500.jpg.webp`,
-    images: [`${imageBase}/product-jpeg-500x500.jpg.webp`, `${imageBase}/product-jpeg-500x500.jpeg-2.webp`],
+    image: `${imageBase}/black-silicone-rubber-beading-500x500.jpg.webp`,
+    images: [`${imageBase}/black-silicone-rubber-beading-500x500.jpg.webp`, `${imageBase}/product-jpeg-500x500.jpeg-2.webp`],
     description:
       "FDA-grade silicone O-rings rated -60°C to +230°C for food, pharma and high-temperature service.",
     material: "Silicone (VMQ), FDA",

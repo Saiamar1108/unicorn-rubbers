@@ -24,8 +24,7 @@ export function ProductCard({ product }: { product: Product }) {
           {product.category}
         </div>
         <h3 className="font-display text-lg leading-tight">{product.name}</h3>
-        <div className="mt-auto flex items-end justify-between pt-2">
-          <span className="text-sm font-bold text-foreground">{product.price}</span>
+        <div className="mt-auto pt-2">
           <span className="inline-flex items-center gap-1 text-xs font-semibold text-ember">
             Inquire <ArrowUpRight className="h-3.5 w-3.5" />
           </span>
